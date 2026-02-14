@@ -13,3 +13,7 @@ export const sleepBodySchema = z.object({
   awakenings: z.number().int().min(0).optional(),
   notes: z.string().optional(),
 });
+
+export const contentBodySchema = z.object({
+  markdown: z.string().min(1, "Content must not be empty"),
+});

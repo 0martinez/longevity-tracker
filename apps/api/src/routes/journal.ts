@@ -3,6 +3,7 @@ import {
   dateParamSchema,
   appendBodySchema,
   sleepBodySchema,
+  contentBodySchema,
   readIndex,
   ensureJournalFile,
   appendToInbox,
@@ -52,6 +53,21 @@ router.post("/journal/:date/append", async (req, res, next) => {
     await updateIndex(date);
 
     res.json({ ok: true, date, appended: lines.length });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// PUT /journal/:date — overwrite full journal content
+router.put("/journal/:date", async (req, res, next) => {
+  try {
+    const { date } = dateParamSchema.parse(req.params);
+    const { markdown } = contentBodySchema.parse(req.body);
+
+    await writeJournalFile(date, markdown);
+    await updateIndex(date);
+
+    res.json({ ok: true, date });
   } catch (err) {
     next(err);
   }
