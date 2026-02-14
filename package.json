@@ -1,0 +1,15 @@
+{
+  "name": "longevity-tracker",
+  "private": true,
+  "packageManager": "bun@1.1.33",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "turbo": "^2",
+    "typescript": "^5"
+  }
+}

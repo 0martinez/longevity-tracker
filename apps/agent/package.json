@@ -1,0 +1,10 @@
+{
+  "name": "@longevity/agent",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Agent placeholder — not yet implemented'",
+    "build": "echo 'Agent placeholder — not yet implemented'"
+  }
+}

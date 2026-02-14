@@ -1,0 +1,25 @@
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.app h1 {
+  margin: 0 0 1.5rem;
+}
+
+.columns {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.main-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.side-col {
+  width: 200px;
+  flex-shrink: 0;
+}
